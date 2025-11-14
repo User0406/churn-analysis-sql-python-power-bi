@@ -41,12 +41,6 @@ Customer_Retention_Analytics/
 │   ├── processed/              # Cleaned and transformed data
 │   │   ├── cleaned_data.csv    # Data after cleaning operations
 │   │   └── final_data.csv      # Feature-engineered, Power BI-ready dataset
-│   └── logs/                   # Pipeline execution logs
-│       ├── ingestion_YYYYMMDD.log
-│       ├── cleaning_YYYYMMDD.log
-│       ├── feature_engineering_YYYYMMDD.log
-│       ├── audit_YYYYMMDD.log
-│       └── pipeline_YYYYMMDD.log
 │
 ├── scripts/                    # Python modules for ETL pipeline
 │   ├── utils.py                # Logging utilities and helper functions
