@@ -42,6 +42,12 @@ Customer_Retention_Analytics/
 │   │   ├── cleaned_data.csv    # Data after cleaning operations
 │   │   └── final_data.csv      # Feature-engineered, Power BI-ready dataset
 │
+├── notebooks/
+│   ├── 01_data_exploration.ipynb # EDA and visualization
+│   ├── 02_feature_engineering.ipynb
+│   ├── 03_model_training.ipynb
+│   ├── 04_model_evaluation.ipynb
+|
 ├── scripts/                    # Python modules for ETL pipeline
 │   ├── utils.py                # Logging utilities and helper functions
 │   ├── ingest_data.py          # Data ingestion (CSV → SQLite)
@@ -540,43 +546,6 @@ openpyxl>=3.1.0
 
 ---
 
-## 🔄 Automation Options
-
-### Option 1: Cron Job (Linux/Mac)
-
-Schedule pipeline to run daily at 2 AM:
-
-```bash
-crontab -e
-```
-
-Add line:
-```
-0 2 * * * cd /app/Customer_Retention_Analytics/scripts && python run_pipeline.py
-```
-
-### Option 2: Windows Task Scheduler
-
-1. Open Task Scheduler
-2. Create Basic Task
-3. Trigger: Daily at 2:00 AM
-4. Action: Start a program
-5. Program: `python`
-6. Arguments: `run_pipeline.py`
-7. Start in: `C:\path\to\scripts\`
-
-### Option 3: Continuous Monitoring
-
-```bash
-# Run in background (Linux)
-nohup python run_pipeline.py --mode watch --interval 600 > pipeline.log 2>&1 &
-
-# Check status
-ps aux | grep run_pipeline
-
-# Stop
-pkill -f run_pipeline.py
-```
 
 ---
 
@@ -584,40 +553,17 @@ pkill -f run_pipeline.py
 
 ### Project Maintainer
 - **Project**: Customer Retention Analytics
-- **Type**: Deloitte-Level Data Analytics Project
+- **Type**:  Data Analytics Project
 - **Status**: Production-Ready
 
 ### Documentation
 - **README**: `README.md`
-- **Insights Report**: `reports/insights_summary.md`
+- **Insights Report**: `reports/report`
 - **Logs**: `data/logs/`
 
+### About 
+- Name : Lakshay sharma
+- Data Analyst
+- Email : Lakshaysharma406@gmail.com
 ---
 
-## 📄 License
-
-This project is a demonstration of enterprise-grade data analytics capabilities.
-
----
-
-## ✅ Project Checklist
-
-- [x] Automated ETL pipeline
-- [x] SQLite database integration
-- [x] Data cleaning and standardization
-- [x] Business KPI generation
-- [x] Retention score calculation
-- [x] Data quality auditing
-- [x] Comprehensive logging
-- [x] Power BI-ready outputs
-- [x] Detailed documentation
-- [x] SQL query examples
-- [x] Automation support
-- [x] Error handling
-- [x] Performance optimization
-
----
-
-**Last Updated**: 2025-10-08  
-**Version**: 1.0.0  
-**Status**: ✅ Production Ready
